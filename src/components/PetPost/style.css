@@ -1,0 +1,121 @@
+.Post
+{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: var(--cardColor);
+    border-radius: 1rem;
+    gap: 1rem;
+    height: 90vh;
+}
+.postTop{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+.userpic{
+    position: relative;
+    top: 0vh;
+    left: 0vw;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.usernameTop{
+    position: relative;
+    top: 0.5vh;
+    left: 0.5vw;
+    font-family: 'Kanit', sans-serif;
+}
+.issue2{
+    position: absolute;
+    right: 2vw;
+    font-size: 25px;
+    color:rgb(249, 27, 31);
+}
+
+
+
+.postimg{
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    align-items: center;
+}
+
+.postReact{
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-left: 2vw;
+}
+.reactbtn{
+    font-size: 20px;
+}
+.detail, .supliconcol, .placeiconcol{
+    display: flex;
+    flex-direction: column;
+}
+.placeiconcol{
+    position: absolute;
+    right: 0;
+    
+}
+.supportCount{
+    font-size: 0.8rem;
+    font-family: 'Kanit', sans-serif;
+}
+.place{
+    position: relative;
+    left: -30%;
+    font-size: 0.8rem;
+    font-family: 'Kanit', sans-serif;
+}
+
+.breedcol, .agecol, .colorcol, .idcol, .desccol{
+    display: flex;
+    flex-direction: row;
+}
+
+.detail{
+    margin-right: 5vh;
+    gap: 0.3rem;
+}
+
+.username{
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: relative;
+    top: -1vh;
+    left: 0.3vw;
+    font-family: 'Kanit', sans-serif;
+}
+
+.labeldata{
+    font-size: 1rem;
+    position: relative;
+    left: 0.5vw;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.datatitle{
+    font-weight: bold;
+    margin-left: 1vw;
+}
+.reactbtn{
+    color: rgb(169, 209, 255);
+}
+.support2{
+    color: rgb(0, 183, 255);
+}
+
+
+@media screen and (max-width: 500px){
+    .Post{
+        height: 80vh;
+    }
+}
