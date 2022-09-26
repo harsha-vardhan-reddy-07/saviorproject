@@ -9,6 +9,7 @@
     left: 24vw;
     z-index: 4;
     padding-bottom: 10vh;
+    
 }
 
 @media screen and (max-width: 900px){
@@ -26,6 +27,7 @@
         position: absolute;
         top: 10vh;
         left: 4vw;
+        margin-top: 2vh;
         }
 }
 

@@ -3,10 +3,14 @@
     display: flex;
     flex-direction: column;
     padding: 1rem;
+    padding-bottom: 1.5rem;
     background-color: var(--cardColor);
     border-radius: 1rem;
     gap: 1rem;
-    height: 90vh;
+    height: fit-content;
+    min-height: 85vh;
+    border: 1px solid rgb(188, 183, 183);
+
 }
 .postTop{
     display: flex;
@@ -21,19 +25,20 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
+    border: 2px solid #68caf4;
 }
 .usernameTop{
     position: relative;
     top: 0.5vh;
     left: 0.5vw;
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Padauk', sans-serif;
 }
-.issue2{
+.foundOrLostNotify{
     position: absolute;
     right: 2vw;
     font-size: 25px;
-    color:rgb(249, 27, 31);
 }
+
 
 
 
@@ -45,6 +50,9 @@
     align-items: center;
 }
 
+
+
+
 .postReact{
     display: flex;
     align-items: flex-start;
@@ -54,33 +62,36 @@
 .reactbtn{
     font-size: 20px;
 }
-.detail, .supliconcol, .placeiconcol{
+.supportbtn{
+    font-size: 20px;
+}
+.detail, .supliconcol{
     display: flex;
     flex-direction: column;
 }
 .placeiconcol{
+    display: flex;
+    flex-direction: row; 
     position: absolute;
-    right: 0;
-    
+    right: 2vw;
 }
 .supportCount{
     font-size: 0.8rem;
     font-family: 'Kanit', sans-serif;
 }
 .place{
-    position: relative;
-    left: -30%;
+    padding-left: 0.6rem;
     font-size: 0.8rem;
     font-family: 'Kanit', sans-serif;
 }
 
-.breedcol, .agecol, .colorcol, .idcol, .desccol{
+.datacol{
     display: flex;
     flex-direction: row;
 }
 
 .detail{
-    margin-right: 5vh;
+    margin-right: 1vw;
     gap: 0.3rem;
 }
 
@@ -88,10 +99,15 @@
     font-size: 1.2rem;
     font-weight: bold;
     position: relative;
-    top: -1vh;
-    left: 0.3vw;
-    font-family: 'Kanit', sans-serif;
+    top: -0.5vh;
+    padding-left: 1vw;
+    font-family: 'Padauk', sans-serif;
 }
+
+.desc, .identitydata{
+    line-height: 1.3em;
+}
+
 
 .labeldata{
     font-size: 1rem;
@@ -105,17 +121,39 @@
 .datatitle{
     font-weight: bold;
     margin-left: 1vw;
+    font-family: 'Padauk', sans-serif;
 }
 .reactbtn{
     color: rgb(169, 209, 255);
 }
-.support2{
-    color: rgb(0, 183, 255);
+
+
+
+.identitydataWithBtn, .descdataWithBtn{
+    display: flex;
+    flex-direction: column;
+}
+
+.viewMore{
+    width: 80px;
+    float: right;
+    position: relative;
+    left: 0vw;
+    border: none;
+    color: rgb(151, 156, 156);
+    background-color: rgba(220, 204, 220, 0);
+    opacity: 0.8;
+    cursor: pointer;
 }
 
 
 @media screen and (max-width: 500px){
     .Post{
-        height: 80vh;
+        min-height: 80vh;
+    
+    }
+
+    .placeiconcol{
+        right: 4vw;
     }
 }
