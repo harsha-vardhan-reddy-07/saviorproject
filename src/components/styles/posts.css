@@ -8,7 +8,7 @@
     border-radius: 1rem;
     gap: 1rem;
     height: fit-content;
-    max-height: 95vh;
+    min-height: 85vh;
     border: 1px solid rgb(188, 183, 183);
 
 }
@@ -25,6 +25,7 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
+    border: 2px solid #68caf4;
 }
 .usernameTop{
     position: relative;
@@ -36,7 +37,6 @@
     position: absolute;
     right: 2vw;
     font-size: 25px;
-    color:rgb(249, 27, 31);
 }
 
 
@@ -60,6 +60,9 @@
     margin-left: 2vw;
 }
 .reactbtn{
+    font-size: 20px;
+}
+.supportbtn{
     font-size: 20px;
 }
 .detail, .supliconcol{
@@ -123,19 +126,22 @@
 .reactbtn{
     color: rgb(169, 209, 255);
 }
-.support2{
-    color: rgb(0, 183, 255);
-}
+
+
 
 .identitydataWithBtn, .descdataWithBtn{
     display: flex;
     flex-direction: column;
 }
 
-#viewMore, #viewLess{
-    width: 7vw;
+.viewMore{
+    width: 80px;
+    float: right;
+    position: relative;
+    left: 0vw;
     border: none;
-    background-color: rgba(255, 255, 255, 0);
+    color: rgb(151, 156, 156);
+    background-color: rgba(220, 204, 220, 0);
     opacity: 0.8;
     cursor: pointer;
 }
@@ -143,7 +149,8 @@
 
 @media screen and (max-width: 500px){
     .Post{
-        height: 80vh;
+        min-height: 80vh;
+    
     }
 
     .placeiconcol{

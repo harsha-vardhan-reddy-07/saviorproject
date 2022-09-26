@@ -7,7 +7,7 @@ export const KidData = [
         username: 'Edward',
         userpic: userimg,
         img: kidpic,
-        desc: 'I found this little girl near the mid wall of berlin. Please reach me if you know her.',
+        desc: 'I found this little girl near the mid wall of berlin. Please reach me if you know her. For example, this can be useful when: Clicking on a "Submit" button, prevent it from submitting a form. Clicking on a link, prevent the link from following the URL.',
         name: 'Jane',
         age: '8',
         height: '96',

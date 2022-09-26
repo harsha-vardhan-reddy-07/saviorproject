@@ -9,37 +9,61 @@ import { HiSpeakerphone } from "react-icons/hi";
 
 const KidPost = ({kiddata}) => {
 
+  // Add "view more" option to description and identity marks
+
+  let windowWidth = window.innerWidth;//get size of screen
+
+  // length of strin (no.of characters of desc, identity marks)
+  var limitdesc = 160;
+  var limitidentity = 70;
+
+  if (windowWidth < 500){
+    limitdesc = 70;
+    limitidentity = 30;
+  }
+  else if (windowWidth < 750){
+    limitdesc = 100;
+    limitidentity = 50;
+  }
+
+  // original length of data
   let descLen = kiddata.desc.length;
   let identityLen = kiddata.identityMarks.length;
 
-  let windowWidth = window.innerWidth;
-
+  // to note whether toggle is opened or not  
   const [isReadMoreShownDesc, setReadMoreShownDesc] = useState(false);
   const [isReadMoreShownIdentity, setReadMoreShownIdentity] = useState(false);
 
-
-
-
-
-
-
-  const descViewMore =() =>{
-
-
+  const toggleIdentity =(e) =>{
+    e.preventDefault();
+    setReadMoreShownIdentity(prevState => !prevState);
   }
 
-  const identityViewMore =() =>{
-
-
+  const toggledesc =(e) =>{
+    e.preventDefault();
+    setReadMoreShownDesc(prevState => !prevState);
   }
 
-  const descViewLess =() =>{
 
-
+  // //User Found or Lost Notification
+  let LFNstyle = {};
+  if (kiddata.issue == 'lost') {
+    LFNstyle={color:'rgb(249, 27, 31)'};
+  }else if (kiddata.issue == 'found'){
+    LFNstyle={color:'rgb(27, 249, 108)'};
   }
 
-  const identityViewLess =() =>{
 
+  // Support button (Like)
+  let Supportstyle = {};
+  if (kiddata.Supported) {
+    Supportstyle={color: 'rgb(0, 0, 0)'};
+  }else if (!kiddata.Supported){
+    Supportstyle={color: 'rgb(169, 209, 255)'};
+  }
+
+  const Support =(e) => {
+    e.preventDefault();
 
   }
 
@@ -51,14 +75,14 @@ const KidPost = ({kiddata}) => {
         <div className="postTop">
           <img src={kiddata.userpic} alt="" className="userpic" />
           <h3 className="usernameTop">{kiddata.username}</h3>
-          <HiSpeakerphone className='foundOrLostNotify'/>
+          <HiSpeakerphone className='foundOrLostNotify' style={LFNstyle}/>
         </div>
 
         <img className='postimg' src={kiddata.img} alt="" />
 
 
         <div className="postReact">
-            <div className="supliconcol"><AiTwotoneHeart className='support reactbtn' name='support' />
+            <div className="supliconcol"><AiTwotoneHeart className='support reactbtn' name='support' onClick={Support} style={Supportstyle}/>
             <label htmlFor="support" className='supportCount'>{kiddata.supports}</label></div>
             <BiCommentDetail className='comment reactbtn' />
             <FiSend className='share reactbtn' />
@@ -69,9 +93,8 @@ const KidPost = ({kiddata}) => {
 
         <div className="detail">
             <div className="desccol datacol"><span className="username" name='username'>{kiddata.username} </span>
-            <div className='descdataWithBtn'><label htmlFor='username' className="desc labeldata" id='desc'>{kiddata.desc}</label>
-            <button id='viewMore' onClick={toggle} >view more</button>
-            <button id='viewLess' onClick={descViewLess} >view less</button></div></div>
+            <div className='descdataWithBtn'><label htmlFor='username' className="desc labeldata" id='desc'>{isReadMoreShownDesc ? kiddata.desc : kiddata.desc.substr(0, limitdesc) + "....."}</label>
+            <button id='viewMoreDesc' className='viewMore' onClick={toggledesc} >{descLen > limitdesc ? (isReadMoreShownDesc ? "View less" : "....View more") : '' }</button></div></div>
             <div className="namecol datacol"><span className="name datatitle" name='name'>Name: </span>
             <label htmlFor='name' className="breeddata labeldata">{kiddata.name}</label></div>
             <div className="agecol datacol"><span className="age datatitle" name='age'>Age: </span>
@@ -79,9 +102,8 @@ const KidPost = ({kiddata}) => {
             <div className="heightcol datacol"><span className="height datatitle" name='height'>Height: </span>
             <label htmlFor='height' className="heightdata labeldata">{kiddata.height} cm</label></div>
             <div className="idcol datacol"><span className="identity datatitle" name='identity'>IdentityMarks: </span>
-            <div className='identitydataWithBtn'><label htmlFor='identity' className="identitydata labeldata">{kiddata.identityMarks}</label>
-            <button id='viewMore' onClick={identityViewMore} >view more</button>
-            <button id='viewLess' onClick={identityViewLess} >view less</button></div></div>
+            <div className='identitydataWithBtn'><label htmlFor='identity' className="identitydata labeldata">{isReadMoreShownIdentity ? kiddata.identityMarks : kiddata.identityMarks.substr(0,limitidentity) + "....."}</label>
+            <button id='viewMoreIdentity' className='viewMore' onClick={toggleIdentity} >{identityLen > limitidentity ? (isReadMoreShownIdentity ? "View less" : "....View more") : ''}</button></div></div>
         </div>
     </div>
     </>
