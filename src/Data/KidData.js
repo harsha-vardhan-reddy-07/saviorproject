@@ -11,7 +11,7 @@ export const KidData = [
         name: 'Jane',
         age: '8',
         height: '96',
-        identityMarks: "Fair little girl with a mole on her left cheek",
+        identityMarks: "Fair little girl with a mole on her left cheek Both the margin property and the padding property insert space around an element. However, the difference is that margin inserts",
         issue:'found',
         place: 'berlin',
         supports: 256,

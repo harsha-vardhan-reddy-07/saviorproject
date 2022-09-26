@@ -11,7 +11,7 @@ export const PetData = [
         breed: 'Golden Retreiver',
         age: '2',
         color: 'Peach',
-        identityMarks: "A tag around it's neck with a name Rocky on it.",
+        identityMarks: "A tag around it's neck with a name Rocky on it. Both the margin property and the padding property insert space around an element. However, the difference is that margin inserts",
         issue:'lost',
         place: 'New York',
         supports: 125,

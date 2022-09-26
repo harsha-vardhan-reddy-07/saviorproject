@@ -10,11 +10,11 @@ const Postsection = () => {
     
     
     <div className="Postsection">
-        {PetData.map((post, id)=>{
-            return <PetPost data={post} id={id}/>
+        {PetData.map((petpost, petid)=>{
+            return <PetPost key="petPost" petdata={petpost} id={petid}/>
         })}
-        {KidData.map((post, id)=>{
-            return <KidPost data={post} id={id}/>
+        {KidData.map((kidpost, kidid)=>{
+            return <KidPost key="kidPost" kiddata={kidpost} id={kidid}/>
         })}
     </div>
     </>

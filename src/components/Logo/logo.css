@@ -5,7 +5,7 @@
     top: 2vh;
     z-index: 7;
 }
-img {
+.logoImg {
     height: 7vh;
 }
 .Search{
@@ -47,15 +47,23 @@ img {
 @media screen and (max-width: 900px) {
     .Search>input{
         width: 30vw;
+        
     }
 }
 @media screen and (max-width: 500px) {
-    img {
+    .logoImg {
         height: 5vh;
-        margin-right: 3vw;
+        width: auto;
+        margin-right: 2vw;
+        margin-left: 0;
+        padding-left: 0;
+        position: relative;
+        left: -3vw;
     }
     .Search>input{
-        width: 65vw;
+        width: 60vw;
+        position: relative;
+        
     }
     .s-icon{
         padding: 3px 7px;

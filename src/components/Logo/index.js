@@ -5,7 +5,7 @@ import './logo.css'
 const Logo = () => {
   return (
    <div className="LogoSearch">
-       <img src={logoimg} alt="" />
+       <img className='logoImg' src={logoimg} alt="" />
        <div className="Search">
            <input type="text" placeholder='Search' />
            <div className="s-icon">
