@@ -147,13 +147,29 @@
 }
 
 
+.genpost-linkdiv{
+    display: flex;
+    flex-direction: row;
+    margin-left: 4vw;
+}
+.genPostLink{
+    font-size: 1rem;
+    color: #4ebff0;
+    text-decoration: none;
+    font-family: 'Mukta', sans-serif;
+}
+
+
 @media screen and (max-width: 500px){
     .Post{
         min-height: 80vh;
-    
     }
 
     .placeiconcol{
         right: 4vw;
+    }
+
+    .genpost-linkdiv{
+        margin-left: 7vw;
     }
 }

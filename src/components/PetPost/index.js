@@ -15,15 +15,15 @@ const PetPost = ({petdata}) => {
   let windowWidth = window.innerWidth; //get size of screen
 
   // length of strin (no.of characters of desc, identity marks)
-  var limitdesc = 150; 
-  var limitidentity = 70;
+  var limitdesc = 140; 
+  var limitidentity = 60;
   if (windowWidth < 500){
-    limitdesc = 70;
+    limitdesc = 80;
     limitidentity = 30;
   }
   else if (windowWidth < 750){
-    limitdesc = 100;
-    limitidentity = 50;
+    limitdesc = 90;
+    limitidentity = 40;
   }
 
   // original length of data
@@ -47,9 +47,9 @@ const PetPost = ({petdata}) => {
 
   //User Found or Lost Notification
   let LFNstyle = {};
-  if (petdata.issue == 'lost') {
+  if (petdata.issue === 'lost') {
     LFNstyle={color:'rgb(249, 27, 31)'};
-  }else if (petdata.issue == 'found'){
+  }else if (petdata.issue === 'found'){
     LFNstyle={color:'rgb(27, 249, 108)'};
   }
 
@@ -93,7 +93,7 @@ const PetPost = ({petdata}) => {
         <div className="detail">
             <div className="desccol datacol"><span className="username" name='username'>{petdata.username} </span>
             <div className='descdataWithBtn'><label htmlFor='username' className="desc labeldata" id='desc'>{isReadMoreShownDesc ? petdata.desc : petdata.desc.substr(0, limitdesc) + "....."}</label>
-            <button id='viewMoreDescpet' className='viewMore' onClick={toggledesc} >{descLen > limitdesc ? (isReadMoreShownDesc ? "View less" : "....View more") : ''}</button></div></div>
+            <button id='viewMoreDescpet' className='viewMore' onClick={toggledesc} >{descLen > limitdesc ? (isReadMoreShownDesc ? "View less" : "View more") : ''}</button></div></div>
             <div className="breedcol datacol"><span className="breed datatitle" name='breed'>Breed: </span>
             <label htmlFor='breed' className="breeddata labeldata">{petdata.breed}</label></div>
             <div className="agecol datacol"><span className="age datatitle" name='age'>Age: </span>
@@ -102,7 +102,7 @@ const PetPost = ({petdata}) => {
             <label htmlFor='color' className="colordata labeldata">{petdata.color}</label></div>
             <div className="idcol datacol"><span className="identity datatitle" name='identity'>IdentityMarks: </span>
             <div className='identitydataWithBtn'><label htmlFor='identity' className="identitydata labeldata">{isReadMoreShownIdentity ? petdata.identityMarks : petdata.identityMarks.substr(0,limitidentity) + "....."}</label>
-            <button id='viewMoreIdentitypet' className='viewMore' onClick={toggleIdentity} >{identityLen > limitidentity ? (isReadMoreShownIdentity ? "View less" : "....View more") : ''}</button></div></div>
+            <button id='viewMoreIdentitypet' className='viewMore' onClick={toggleIdentity} >{identityLen > limitidentity ? (isReadMoreShownIdentity ? "View less" : "View more") : ''}</button></div></div>
         </div>
     </div>
     </>

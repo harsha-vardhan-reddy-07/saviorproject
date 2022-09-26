@@ -47,9 +47,9 @@ const KidPost = ({kiddata}) => {
 
   // //User Found or Lost Notification
   let LFNstyle = {};
-  if (kiddata.issue == 'lost') {
+  if (kiddata.issue === 'lost') {
     LFNstyle={color:'rgb(249, 27, 31)'};
-  }else if (kiddata.issue == 'found'){
+  }else if (kiddata.issue === 'found'){
     LFNstyle={color:'rgb(27, 249, 108)'};
   }
 
@@ -94,7 +94,7 @@ const KidPost = ({kiddata}) => {
         <div className="detail">
             <div className="desccol datacol"><span className="username" name='username'>{kiddata.username} </span>
             <div className='descdataWithBtn'><label htmlFor='username' className="desc labeldata" id='desc'>{isReadMoreShownDesc ? kiddata.desc : kiddata.desc.substr(0, limitdesc) + "....."}</label>
-            <button id='viewMoreDesc' className='viewMore' onClick={toggledesc} >{descLen > limitdesc ? (isReadMoreShownDesc ? "View less" : "....View more") : '' }</button></div></div>
+            <button id='viewMoreDesc' className='viewMore' onClick={toggledesc} >{descLen > limitdesc ? (isReadMoreShownDesc ? "View less" : "View more") : '' }</button></div></div>
             <div className="namecol datacol"><span className="name datatitle" name='name'>Name: </span>
             <label htmlFor='name' className="breeddata labeldata">{kiddata.name}</label></div>
             <div className="agecol datacol"><span className="age datatitle" name='age'>Age: </span>
@@ -103,7 +103,7 @@ const KidPost = ({kiddata}) => {
             <label htmlFor='height' className="heightdata labeldata">{kiddata.height} cm</label></div>
             <div className="idcol datacol"><span className="identity datatitle" name='identity'>IdentityMarks: </span>
             <div className='identitydataWithBtn'><label htmlFor='identity' className="identitydata labeldata">{isReadMoreShownIdentity ? kiddata.identityMarks : kiddata.identityMarks.substr(0,limitidentity) + "....."}</label>
-            <button id='viewMoreIdentity' className='viewMore' onClick={toggleIdentity} >{identityLen > limitidentity ? (isReadMoreShownIdentity ? "View less" : "....View more") : ''}</button></div></div>
+            <button id='viewMoreIdentity' className='viewMore' onClick={toggleIdentity} >{identityLen > limitidentity ? (isReadMoreShownIdentity ? "View less" : "View more") : ''}</button></div></div>
         </div>
     </div>
     </>
