@@ -7,23 +7,23 @@ import { FaGlobeAmericas } from "react-icons/fa";
 import { HiSpeakerphone } from "react-icons/hi";
 
 
-const KidPost = ({kiddata}) => {
+const KidPost = ({kiddata, commentToggle}) => {
 
   // Add "view more" option to description and identity marks
 
   let windowWidth = window.innerWidth;//get size of screen
 
   // length of strin (no.of characters of desc, identity marks)
-  var limitdesc = 160;
+  var limitdesc = 130;
   var limitidentity = 70;
 
   if (windowWidth < 500){
-    limitdesc = 70;
-    limitidentity = 30;
+    limitdesc = 60;
+    limitidentity = 25;
   }
   else if (windowWidth < 750){
-    limitdesc = 100;
-    limitidentity = 50;
+    limitdesc = 90;
+    limitidentity = 40;
   }
 
   // original length of data
@@ -55,17 +55,21 @@ const KidPost = ({kiddata}) => {
 
 
   // Support button (Like)
-  let Supportstyle = {};
-  if (kiddata.Supported) {
-    Supportstyle={color: 'rgb(0, 0, 0)'};
-  }else if (!kiddata.Supported){
-    Supportstyle={color: 'rgb(169, 209, 255)'};
-  }
 
   const Support =(e) => {
     e.preventDefault();
-
+    
   }
+
+  
+  let Supportstyle = {};
+  if (kiddata.supported) {
+    Supportstyle={color: 'rgb(18, 180, 249)'};
+  }else if (!kiddata.supported){
+    Supportstyle={color: 'rgb(185, 215, 249)'};
+  }
+
+  
 
 
   return (
@@ -84,7 +88,7 @@ const KidPost = ({kiddata}) => {
         <div className="postReact">
             <div className="supliconcol"><AiTwotoneHeart className='support reactbtn' name='support' onClick={Support} style={Supportstyle}/>
             <label htmlFor="support" className='supportCount'>{kiddata.supports}</label></div>
-            <BiCommentDetail className='comment reactbtn' />
+            <BiCommentDetail className='comment reactbtn' onClick={commentToggle}/>
             <FiSend className='share reactbtn' />
             <div className="placeiconcol"><FaGlobeAmericas className='placeicon reactbtn' name='place' />
             <label htmlFor="place" className='place'>{kiddata.place}</label></div>

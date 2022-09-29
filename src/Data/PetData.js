@@ -7,7 +7,7 @@ export const PetData = [
         username: 'Emma',
         userpic: userimg,
         img: dogpic,
-        desc: 'I lost my pet Rocky near the old estate building in New york. It gone missing suddenly yesterday.  Please help me to find my pet. stopPropagation prevents further propagation of the current event in the capturing and bubbling phases. preventDefault prevents the default action the browser makes on that event. ',
+        desc: 'I lost my pet Rocky near the old estate building in New york. It gone missing suddenly yesterday.  Please help me to find my pet. stop Propagation prevents further propagation of the current event in the capturing and bubbling phases. preventDefault prevents the default action the browser makes on that event. ',
         breed: 'Golden Retreiver',
         age: '2',
         color: 'Peach',

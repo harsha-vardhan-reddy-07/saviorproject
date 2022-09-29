@@ -61,9 +61,12 @@
 }
 .reactbtn{
     font-size: 20px;
+    color: rgb(100, 171, 252);
+    cursor: pointer;
 }
 .supportbtn{
     font-size: 20px;
+    cursor: pointer;
 }
 .detail, .supliconcol{
     display: flex;
@@ -123,10 +126,6 @@
     margin-left: 1vw;
     font-family: 'Padauk', sans-serif;
 }
-.reactbtn{
-    color: rgb(169, 209, 255);
-}
-
 
 
 .identitydataWithBtn, .descdataWithBtn{

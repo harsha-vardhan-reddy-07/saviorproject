@@ -8,14 +8,14 @@ import { HiSpeakerphone } from "react-icons/hi";
 import { useState } from 'react';
 
 
-const PetPost = ({petdata}) => {
+const PetPost = ({petdata, commentToggle}) => {
 
   // Add "view more" option to description and identity marks
 
   let windowWidth = window.innerWidth; //get size of screen
 
   // length of strin (no.of characters of desc, identity marks)
-  var limitdesc = 140; 
+  var limitdesc = 130; 
   var limitidentity = 60;
   if (windowWidth < 500){
     limitdesc = 80;
@@ -55,10 +55,10 @@ const PetPost = ({petdata}) => {
 
   // Support button (Like)
   let Supportstyle = {};
-  if (petdata.Supported) {
-    Supportstyle={color: 'rgb(0, 183, 255)'};
-  }else if (!petdata.Supported){
-    Supportstyle={color: 'rgb(169, 209, 255)'};
+  if (petdata.supported) {
+    Supportstyle={color: 'rgb(18, 180, 249)'};
+  }else if (!petdata.supported){
+    Supportstyle={color: 'rgb(185, 215, 249)'};
   }
 
   const Support =(e) => {
@@ -83,7 +83,7 @@ const PetPost = ({petdata}) => {
         <div className="postReact">
             <div className="supliconcol"><AiTwotoneHeart className='supportbtn' name='support' onClick={Support} style={Supportstyle} />
             <label htmlFor="support" className='supportCount'>{petdata.supports}</label></div>
-            <BiCommentDetail className='comment reactbtn' />
+            <BiCommentDetail className='comment reactbtn' onClick={commentToggle}/>
             <FiSend className='share reactbtn' />
             <div className="placeiconcol"><FaGlobeAmericas className='placeicon reactbtn' name='place' />
             <label htmlFor="place" className='place'>{petdata.place}</label></div>

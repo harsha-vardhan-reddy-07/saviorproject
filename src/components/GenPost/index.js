@@ -5,7 +5,7 @@ import { BiCommentDetail } from "react-icons/bi";
 import { FiSend } from "react-icons/fi";
 import { FaGlobeAmericas } from "react-icons/fa";
 
-const GenPost = ({gendata}) => {
+const GenPost = ({gendata, commentToggle}) => {
 
     // Add "view more" option to description and identity marks
 
@@ -35,10 +35,10 @@ const GenPost = ({gendata}) => {
 
   // Support button (Like)
   let Supportstyle = {};
-  if (gendata.Supported) {
-    Supportstyle={color: 'rgb(0, 0, 0)'};
-  }else if (!gendata.Supported){
-    Supportstyle={color: 'rgb(169, 209, 255)'};
+  if (gendata.supported) {
+    Supportstyle={color: 'rgb(18, 180, 249)'};
+  }else if (!gendata.supported){
+    Supportstyle={color: 'rgb(185, 215, 249)'};
   }
 
   const Support =(e) => {
@@ -47,8 +47,9 @@ const GenPost = ({gendata}) => {
   }
 
   //link icon
+  let descLink = gendata.link;
   let iconStyle = {};
-  if(gendata.link === ''){
+  if(descLink === ''){
     iconStyle = {display: 'none'}
   }
   else{
@@ -72,9 +73,9 @@ const GenPost = ({gendata}) => {
 
 
 <div className="postReact">
-    <div className="supliconcol"><AiTwotoneHeart className='support reactbtn' name='support' onClick={Support} style={Supportstyle}/>
+    <div className="supliconcol"><AiTwotoneHeart className='support supportbtn' name='support' onClick={Support} style={Supportstyle}/>
     <label htmlFor="support" className='supportCount'>{gendata.supports}</label></div>
-    <BiCommentDetail className='comment reactbtn' />
+    <BiCommentDetail className='comment reactbtn' onClick={commentToggle}/>
     <FiSend className='share reactbtn' />
     <div className="placeiconcol"><FaGlobeAmericas className='placeicon reactbtn' name='place' />
     <label htmlFor="place" className='place'>{gendata.place}</label></div>
@@ -86,7 +87,8 @@ const GenPost = ({gendata}) => {
     <div className='descdataWithBtn'><label htmlFor='username' className="desc labeldata" id='desc'>{isReadMoreShownDesc ? gendata.desc : gendata.desc.substr(0, limitdesc) + "....."}</label>
     <button id='viewMoreDesc' className='viewMore' onClick={toggledesc} >{descLen > limitdesc ? (isReadMoreShownDesc ? "View less" : "View more") : '' }</button></div></div>
     <div className="genpost-linkdiv" ><AiOutlineLink name='linkIcon' style={iconStyle} />
-    <label htmlFor='linkIcon'><a href={gendata.link} className='genPostLink'>{gendata.link}</a></label></div>
+    <label htmlFor='linkIcon'><a href={descLink} target='_blank' rel="noreferrer" className='genPostLink'>{gendata.link}</a></label></div>
+    
     
 </div>
 </div>

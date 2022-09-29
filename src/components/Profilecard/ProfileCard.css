@@ -41,6 +41,7 @@
     align-items: center;
     margin-top: 3rem;
     gap: 10px;
+    font-family: 'Padauk', sans-serif;
 }
 
 .ProfileName>span:nth-of-type(1)
@@ -73,9 +74,10 @@
   .follow {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 0rem;
     align-items: center;
     justify-content: center;
+    font-family: 'Padauk', sans-serif;
   }
   .follow > span:nth-of-type(1) {
     font-weight: bold;
@@ -87,8 +89,8 @@
   }
   
   .vl {
-    height: 150%;
-    border-left: 1px solid #000;
+    height: 6vh;
+    border-left: 1px solid rgb(131, 128, 128);
   }
 
 
